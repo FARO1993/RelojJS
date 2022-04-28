@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Reloj Javascript</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:ital@1&display=swap" 
+          rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <script async src="index.js"></script>
 </head>
@@ -12,44 +15,22 @@
     <div class="title-container">
         <h1>Reloj con JavaScript</h1>
     </div>
-    <hr>
     <br>
     <br>
 
     <form id="content" class="reloj-container">
 
-        <input id="reloj" type="text">
-        <br>
-        <br>
+        <div class="reloj_fecha-container">
 
-        <div>
-            <h3>Fijar alarma</h3>
+            <input id="fecha" type="text">
+            <input id="reloj" type="text">
+            <br>
+            <br>
+
         </div>
 
-        <div class="alarma-container">
-            <div>
-                <pre>Hora:</pre>
-                <select>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                </select>
-            </div>
-
-            <div>
-                <pre>Minutos:</pre>
-                <select>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                    <option value="1">1</option>
-                </select>
-            </div>
+        <div>
+            <button><b>Fijar Alarma</b></button>
         </div>
 
     </form>
