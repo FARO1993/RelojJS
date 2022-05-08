@@ -45,7 +45,7 @@ function mueveReloj() {
         dia = dias[4];
     } else if( dia === 6 ) {
         dia = dias[5];
-    } else if( dia === 7 ) {
+    } else if( dia === 0 ) {
         dia = dias [6]
     };
 
@@ -54,6 +54,8 @@ function mueveReloj() {
     var fechaAnio = timeZone.getFullYear();
     //Concateno valores para mostrar la fecha completa.
     fecha.value = `${dia} ${fechaDia}/${fechaMes}/${fechaAnio}`;
+
+    inputDateHour(fecha.value, display.value);
 
     //Poner en marcha el reloj.
     setTimeout(() => {
@@ -83,6 +85,34 @@ function guardarAlarma() {
 function cancelar() {
     guardarAlarma();       
 };
+
+//Datos ingresados en los input de la alarma.
+function inputDateHour(fecha, horario) {
+    const dateIput = document.getElementById("dateInput");
+    const hourInput = document.getElementById("hourInput"); 
+
+    dateIput.addEventListener('change', (event) => {
+        const fechaSeleccionada = changeDateInput(event.path[0].value);
+    });
+
+    hourInput.addEventListener('change', (event) => {
+        const horaSeleccionada = event.path[0].value; 
+    })
+}
+
+//Modifico el date del input para que el formato de fecha sea dd/MM/yyyy
+function changeDateInput(date) {
+    const dateSplit = date.split("-");
+    dateSplit.splice(3, 1, dateSplit[2]);
+    dateSplit.splice(2, 1, dateSplit[0]);
+    dateSplit.splice(0, 1, dateSplit[3]);
+    dateSplit.splice(3,1);
+
+    return dateSplit.join("/");
+}
+
+
+
 
 
 
